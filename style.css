@@ -1,0 +1,72 @@
+body {
+  font-family: 'Ubuntu', Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background: #1B1B1B;
+}
+
+img{
+  padding-top: 5vh;
+}
+
+h1 {
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 25px;
+  padding: 20px;
+  color: white !important;
+}
+  
+#fileInput {
+  width: 300px;
+  height: 200px;
+  margin: 20px auto;
+  border: 2px dashed #06a821;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  background: #ffffff17;
+}
+  
+#colorOption {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+  
+#colorOption label {
+  margin: 0 10px;
+}
+
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #fff;
+}
+
+#pages, #price {
+  margin: 10px 0;
+}
+
+#colorOption label {
+  margin: 0 15px;
+}
+
+#colorOption input[type="radio"] {
+  display: none;
+}
+
+#colorOption input[type="radio"] + label {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #06a821;
+  background: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#colorOption input[type="radio"]:checked + label {
+  background-color: #06a821;
+  color: #fff;
+}

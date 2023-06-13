@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=100px, initial-scale=1.0">
+  <title>Calculadora de fotocopias</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <img src="logotipo.png" alt="">
+  <h1>Calculadora de fotocopias</h1>
+  
+  <input type="file" id="fileInput">
+  
+  <div id="colorOption">
+    <input type="radio" name="color" value="bw" id="bwRadio" checked>
+    <label for="bwRadio">Blanco y negro</label>
+    
+    <input type="radio" name="color" value="color" id="colorRadio">
+    <label for="colorRadio">Color</label>
+  </div>
+  
+  <div id="result">
+    <p id="pages">Número de páginas: <span id="numPages"></span></p>
+    <p id="price">Precio aproximado: <span id="estimatedPrice"></span>€</p>
+    <p id="pdfSize">Tamaño del PDF:</p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
