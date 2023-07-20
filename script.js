@@ -76,3 +76,12 @@ function obtenerNumeroPaginasYSize(pdfData, callback) {
     });
   });
 }
+
+function calcularSuma() {
+  var price1 = parseFloat(document.getElementById('price1').value) || 0;
+  var price2 = parseFloat(document.getElementById('price2').value) || 0;
+
+  var suma = price1 + price2;
+
+  document.getElementById('resultSum').textContent = suma.toFixed(2);
+}
