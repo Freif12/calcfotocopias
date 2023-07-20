@@ -45,15 +45,15 @@ colorOptions.forEach(function(option) {
 
 function calcularPrecio(numeroPaginas) {
   var precios = {
-    bw: { pagina: 0.1, hoja: 0.5 },
-    color: { pagina: 0.2, hoja: 1 }
+    bw: { primeraHoja: 0.5, hojaAdicional: 0.06 },
+    color: { primeraHoja: 0.5, hojaAdicional: 0.15 }
   };
 
   var colorOption = document.querySelector('input[name="color"]:checked').value;
-  var precioPorPagina = precios[colorOption].pagina;
-  var precioPorHoja = precios[colorOption].hoja;
+  var precioPrimeraHoja = precios[colorOption].primeraHoja;
+  var precioHojaAdicional = precios[colorOption].hojaAdicional;
 
-  var precio = numeroPaginas * (precioPorPagina + precioPorHoja);
+  var precio = precioPrimeraHoja + (numeroPaginas - 1) * precioHojaAdicional;
 
   // Mostrar el resultado
   document.getElementById('numPages').textContent = numeroPaginas;
@@ -75,16 +75,4 @@ function obtenerNumeroPaginasYSize(pdfData, callback) {
       callback({ numeroPaginas: pdf.numPages, size: size });
     });
   });
-}
-
-function mostrarTamanoPDF(size) {
-  var sizeElement = document.getElementById('pdfSize');
-  sizeElement.innerHTML = 'Tamaño del PDF:<br>';
-  sizeElement.innerHTML += 'Ancho: ' + size.width.toFixed(2) + ' cm<br>';
-  sizeElement.innerHTML += 'Altura: ' + size.height.toFixed(2) + ' cm';
-}
-
-function eliminarTamanoPDF() {
-  var sizeElement = document.getElementById('pdfSize');
-  sizeElement.innerHTML = 'Tamaño del PDF:';
 }
